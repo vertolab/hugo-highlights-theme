@@ -17,6 +17,11 @@
           </li>
         {{ end }}
       </ul>
+      <ul class="actions">
+        {{ range .block.link }}
+          <li><a href="{{.url}}" class="button special scrolly">{{ with .title }}{{ . | markdownify }}{{ end }}</a></li>
+        {{ end }}
+      </ul>
     </div>
     {{ if .next }}
       <a href="#{{.next.id}}" class="goto-next scrolly">{{ with .block.buttontext }}{{ . | markdownify }}{{ end }}</a>
